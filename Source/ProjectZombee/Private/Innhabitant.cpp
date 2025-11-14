@@ -49,3 +49,14 @@ void AInnhabitant::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 }
 
+int32 AInnhabitant::BittenToday = 0;
+
+int32 AInnhabitant::GetBittenToday()
+{
+	return BittenToday;
+}
+
+void AInnhabitant::SetBittenToday(int32 newValue)
+{
+	BittenToday = newValue;
+}
