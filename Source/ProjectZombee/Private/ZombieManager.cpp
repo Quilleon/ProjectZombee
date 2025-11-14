@@ -23,9 +23,52 @@ void AZombieManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+    
+}
 
-    if (Zombies > 100)
+
+
+float AZombieManager::graph_lookup(float xIn)
+{
+    // Piecewise linear interpolation with endpoint clamping
+    
+    // Special cases, xIn outside table range:
+    
+
+    if (xIn <= graphPts[0].X)
+        return graphPts[0].Y;
+    if (xIn >= graphPts.Last().X)
+        return graphPts.Last().Y;
+
+    for (size_t i = 1; i < graphPts.Num(); ++i)
+    {
+        if (xIn <= graphPts[i].X)
+        {
+            // Linear interpolation between points in graph:
+            float x0 = graphPts[i - 1].X, x1 = graphPts[i].X;     //the x value below and above xIn
+            float y0 = graphPts[i - 1].Y, y1 = graphPts[i].Y;   //the y value below and above xIn
+            float t = (xIn - x0) / (x1 - x0);   //distance between x0 and x1
+            return y0 + t * (y1 - y0);            //return the interpolated y value
+        }
+    }
+    return graphPts.Last().Y; // fallback
+}
+
+// Sums up all bitten
+float AZombieManager::conveyor_content()
+{
+    float sum = 0.0;
+    for (FConveyorBatch& b : conveyor)
+        sum += b.amountOfPeople;
+    return sum;
+}
+
+void AZombieManager::ZombieModel(int& bittenToday)
+{
+    if (Bitten <= 0 && Susceptible <= 0)
         return;
+
+    // Used for displaying the day
     day++;
 
 
@@ -61,6 +104,7 @@ void AZombieManager::Tick(float DeltaTime)
     float getting_bitten = number_of_bites_from_total_zombies_on_susceptible;
     // Truncate to not exceed available Susceptible this step (Euler non-negative safeguard)
     getting_bitten = FMath::Min(getting_bitten, floor(Susceptible)); // ensure we don't drive below 0
+    bittenToday = getting_bitten;
 
     // --- Conveyor mechanics for Bitten ---
     // 1) Progress existing batches and compute raw outflow (people exiting conveyor)
@@ -119,41 +163,6 @@ void AZombieManager::Tick(float DeltaTime)
     //FString msg =  ;
 
     GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), Susceptible, Bitten, Zombies, day));
-}
-
-float AZombieManager::graph_lookup(float xIn)
-{
-    // Piecewise linear interpolation with endpoint clamping
-    
-    // Special cases, xIn outside table range:
-    
-
-    if (xIn <= graphPts[0].X)
-        return graphPts[0].Y;
-    if (xIn >= graphPts.Last().X)
-        return graphPts.Last().Y;
-
-    for (size_t i = 1; i < graphPts.Num(); ++i)
-    {
-        if (xIn <= graphPts[i].X)
-        {
-            // Linear interpolation between points in graph:
-            float x0 = graphPts[i - 1].X, x1 = graphPts[i].X;     //the x value below and above xIn
-            float y0 = graphPts[i - 1].Y, y1 = graphPts[i].Y;   //the y value below and above xIn
-            float t = (xIn - x0) / (x1 - x0);   //distance between x0 and x1
-            return y0 + t * (y1 - y0);            //return the interpolated y value
-        }
-    }
-    return graphPts.Last().Y; // fallback
-}
-
-// Sums up all bitten
-float AZombieManager::conveyor_content()
-{
-    float sum = 0.0;
-    for (FConveyorBatch& b : conveyor)
-        sum += b.amountOfPeople;
-    return sum;
 }
 
 /*

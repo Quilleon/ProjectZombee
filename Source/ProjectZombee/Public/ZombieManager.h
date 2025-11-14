@@ -39,20 +39,27 @@ public:
 	const int STARTTIME{ 0 };        // Simulation StartTime
 	const int STOPTIME{ 120 };      // By this time all simulations should be finished
 	const float DT{ 1.f };      // DeltaTime for the simulation, 1 == 1 day steps
-	int32 day = 0;
+	int32 day = 0; // Starting day of the simulation
 
 	// ----- CONSTANTS / INITIALIZATION -----
-	const float days_to_become_infected_from_bite{ 15.f };   // Days
-	const float Bitten_capacity{ 100.f };                    // Capacity inside conveyor == people at start
-	const float patient_zero{ 1.0f };                        // Zombies
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Values")
+	float days_to_become_infected_from_bite{ 15.f };   // Days
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Values")
+	float Bitten_capacity{ 100.f };                    // Capacity inside conveyor == people at start
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Values")
+	float patient_zero{ 1.0f };                        // Zombies
 	const float CONVERSION_FROM_PEOPLE_TO_ZOMBIES{ 1.f };    // Conversion constant, always 1
 	const float normal_number_of_bites{ 1.f };               // People/zombie/day
 	const float land_area{ 1000.f };                         // In m2
 	const float normal_population_density{ 0.1f };           // people/m2
 
 	// Stocks (initial)
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Variables")
 	float Susceptible{ 100.f };        // People
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Variables")
 	float Bitten{ 0.f };
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Variables")
 	float Zombies = patient_zero;     // Zombies == 1.f at start
 
 	// Conveyor content is the Bitten people incubating
@@ -72,6 +79,9 @@ public:
 	// Forward declarations -> functions after int main()
 	float graph_lookup(float xIn);
 	float conveyor_content();
+
+	UFUNCTION(BlueprintCallable)
+	void ZombieModel(int& bittenToday);
 	//void write_row(int t, std::ofstream& csv);
 };
 
