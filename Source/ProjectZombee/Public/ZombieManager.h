@@ -40,6 +40,7 @@ public:
 	const int STOPTIME{ 120 };      // By this time all simulations should be finished
 	const float DT{ 1.f };      // DeltaTime for the simulation, 1 == 1 day steps
 	int32 day = 0; // Starting day of the simulation
+	int32 day2 = 0; // Starting day of the simulation
 
 	// ----- CONSTANTS / INITIALIZATION -----
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Zombie Model Values")
@@ -66,6 +67,7 @@ public:
 	// Will have one ConveyorBatch of each remainingDays
 	// So max days_to_become_infected_from_bite different ConveyorBatch'es
 	TArray<FConveyorBatch> conveyor;            // accepts multiple batches
+	TArray<FConveyorBatch> conveyor2;            // accepts multiple batches
 
 	// GRAPH points: population_density_effect_on_zombie_bites
 	// x = population_density / normal_population_density
@@ -78,10 +80,12 @@ public:
 
 	// Forward declarations -> functions after int main()
 	float graph_lookup(float xIn);
-	float conveyor_content();
+	float conveyor_content(TArray<FConveyorBatch> inputConveyor);
 
 	UFUNCTION(BlueprintCallable)
-	void ZombieModel(int& bittenToday);
+	void ZombieModel(int& bittenToday, bool& finished);
+	UFUNCTION(BlueprintCallable)
+	void ZombieModelWithInputs(float tempSusceptible, float tempBitten, float tempZombies, int& bittenToday, bool& finished);
 	//void write_row(int t, std::ofstream& csv);
 };
 
