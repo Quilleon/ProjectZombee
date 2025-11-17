@@ -42,4 +42,14 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "State")
 	ZombieState prevState = (ZombieState)0;
+
+
+
+	static int32 BittenToday;
+
+	UFUNCTION(BlueprintCallable)
+	int32 GetBittenToday();
+
+	UFUNCTION(BlueprintCallable)
+	void SetBittenToday(int32 newValue);
 };
