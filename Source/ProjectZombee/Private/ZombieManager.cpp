@@ -173,7 +173,7 @@ void AZombieManager::ZombieModel(int& bittenToday, bool& finished)
 
 void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitten, float tempZombies, int& bittenToday, bool& finished)
 {
-    if (tempBitten <= 0 && tempSusceptible <= 0)
+    if ((tempBitten <= 0 && tempSusceptible <= 0) || (tempZombies <= 0 && tempBitten <= 0))
     {
         finished = true;
         return;
@@ -261,7 +261,7 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
 
     // Bitten stock is already handled implicitly by conveyor vector
     // (content increased by inflow_people, decreased by raw_outflow_people)
-    tempBitten = conveyor_content(conveyor2);
+    //tempBitten = conveyor_content(conveyor2);
 
     // --- (Optional) derived integer populations, not used further ---
     // float Susceptible_Population = floor(Susceptible);
