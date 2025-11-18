@@ -28,10 +28,6 @@
 		{
 			"Name": "GameplayStateTree",
 			"Enabled": true
-		},
-		{
-			"Name": "MetaHumanCharacter",
-			"Enabled": true
 		}
 	]
 }
