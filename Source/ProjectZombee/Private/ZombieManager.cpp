@@ -74,7 +74,7 @@ void AZombieManager::ZombieModel(int& bittenToday, bool& finished)
 
     // Used for displaying the day
     day++;
-
+    //if (day == 1) return;
 
     //std::cout << "\n***** Day: " << t << " *****\n";
     // --- Calculate auxiliaries (using values at current time t) ---
@@ -173,7 +173,7 @@ void AZombieManager::ZombieModel(int& bittenToday, bool& finished)
 
 void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitten, float tempZombies, int& bittenToday, bool& finished)
 {
-    if ((tempBitten <= 0 && tempSusceptible <= 0) || (tempZombies <= 0 && tempBitten <= 0))
+    if (tempBitten <= 0 && tempSusceptible <= 0)
     {
         finished = true;
         return;
@@ -186,7 +186,7 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
 
     //std::cout << "\n***** Day: " << t << " *****\n";
     // --- Calculate auxiliaries (using values at current time t) ---
-    tempBitten = conveyor_content(conveyor2); // current conveyor content (people)
+    //tempBitten = conveyor_content(conveyor2); // current conveyor content (people)
     float non_zombie_population = tempBitten + tempSusceptible; // People
     float population_density = non_zombie_population / land_area; // people/m2
 
@@ -254,7 +254,7 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
 
     // --- STOCK UPDATES (Euler) ---
     // Susceptible(t+1) = S(t) - getting_bitten
-    tempSusceptible = std::max(0.f, tempSusceptible - getting_bitten * DT);
+    //tempSusceptible = std::max(0.f, tempSusceptible - getting_bitten * DT);
 
     // Zombies(t+1) = Z(t) + becoming_infecting
     tempZombies = std::max(0.f, tempZombies + becoming_infected * DT);
