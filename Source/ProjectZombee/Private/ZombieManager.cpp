@@ -275,5 +275,5 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
     //FString msg =  ;
 
     UE_LOG(LogTemp, Log, TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), tempSusceptible, tempBitten, tempZombies, day2);
-    GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, FString::Printf(TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), tempSusceptible, tempBitten, tempZombies, day2));
+    //GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, FString::Printf(TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), tempSusceptible, tempBitten, tempZombies, day2));
 }
