@@ -7,7 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="083bfe31-a553-4dc9-b2ab-b20301e9d5d0" name="Changes" comment="" />
+    <list default="true" id="083bfe31-a553-4dc9-b2ab-b20301e9d5d0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProjectZombee.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProjectZombee.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Innhabitant.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Innhabitant.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Player.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Player.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_ZombieManager.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_ZombieManager.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/GameLevel.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/GameLevel.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ProjectZombee/Private/ZombieManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ProjectZombee/Private/ZombieManager.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,11 +25,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../Program Files/Epic Games/UE_5.6/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ProjectZombee/Private/ZombieManager.cpp" root0="SKIP_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="35eyqcLAT6OBGZGjyGprPzrAcin" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "<unknown>",
+    "git-widget-placeholder": "Chris-Branch",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,7 +56,7 @@
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXECUTABLE_PATH" value="C:\Program Files\Epic Games\UE_5.6\Engine\Binaries\Win64\UnrealEditor-Win64-DebugGame.exe" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\Martin Solvang\Documents\Unreal Projects\ProjectZombee\ProjectZombee.uproject&quot;" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\marti\Documents\Unreal Projects\ProjectZombee\ProjectZombee.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
@@ -60,7 +68,7 @@
         <option name="CONFIGURATION" value="DebugGame" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="C:\Users\Martin Solvang\Documents\Unreal Projects\ProjectZombee\Binaries\Win64\ProjectZombee-Win64-DebugGame.exe" />
+        <option name="EXECUTABLE_PATH" value="C:\Users\marti\Documents\Unreal Projects\ProjectZombee\Binaries\Win64\ProjectZombee-Win64-DebugGame.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
@@ -74,7 +82,7 @@
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
         <option name="EXECUTABLE_PATH" value="C:\Program Files\Epic Games\UE_5.6\Engine\Binaries\Win64\UnrealEditor.exe" />
-        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\Martin Solvang\Documents\Unreal Projects\ProjectZombee\ProjectZombee.uproject&quot;" />
+        <option name="MANDATORY_PROGRAM_PARAMETERS" value=" &quot;C:\Users\marti\Documents\Unreal Projects\ProjectZombee\ProjectZombee.uproject&quot;" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
         <option name="PASS_PARENT_ENVS" value="1" />
@@ -86,7 +94,7 @@
         <option name="CONFIGURATION" value="Development" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="C:\Users\Martin Solvang\Documents\Unreal Projects\ProjectZombee\Binaries\Win64\ProjectZombee.exe" />
+        <option name="EXECUTABLE_PATH" value="C:\Users\marti\Documents\Unreal Projects\ProjectZombee\Binaries\Win64\ProjectZombee.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
@@ -99,7 +107,7 @@
         <option name="CONFIGURATION" value="Shipping" />
         <option name="PLATFORM" value="Win64" />
         <option name="CURRENT_LAUNCH_PROFILE" value="Local" />
-        <option name="EXECUTABLE_PATH" value="C:\Users\Martin Solvang\Documents\Unreal Projects\ProjectZombee\Binaries\Win64\ProjectZombee-Win64-Shipping.exe" />
+        <option name="EXECUTABLE_PATH" value="C:\Users\marti\Documents\Unreal Projects\ProjectZombee\Binaries\Win64\ProjectZombee-Win64-Shipping.exe" />
         <option name="MANDATORY_PROGRAM_PARAMETERS" value="" />
         <option name="CUSTOM_PROGRAM_PARAMETERS" value="" />
         <option name="WORKING_DIRECTORY" value="C:\Program Files\Epic Games\UE_5.6" />
@@ -125,6 +133,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763485025282</updated>
       <workItem from="1763485027460" duration="3081000" />
+      <workItem from="1763629009325" duration="1444000" />
     </task>
     <servers />
   </component>

@@ -74,7 +74,7 @@ void AZombieManager::ZombieModel(int& bittenToday, bool& finished)
 
     // Used for displaying the day
     day++;
-    //if (day == 1) return;
+
 
     //std::cout << "\n***** Day: " << t << " *****\n";
     // --- Calculate auxiliaries (using values at current time t) ---
@@ -186,7 +186,7 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
 
     //std::cout << "\n***** Day: " << t << " *****\n";
     // --- Calculate auxiliaries (using values at current time t) ---
-    //tempBitten = conveyor_content(conveyor2); // current conveyor content (people)
+    tempBitten = conveyor_content(conveyor2); // current conveyor content (people)
     float non_zombie_population = tempBitten + tempSusceptible; // People
     float population_density = non_zombie_population / land_area; // people/m2
 
@@ -254,7 +254,7 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
 
     // --- STOCK UPDATES (Euler) ---
     // Susceptible(t+1) = S(t) - getting_bitten
-    //tempSusceptible = std::max(0.f, tempSusceptible - getting_bitten * DT);
+    tempSusceptible = std::max(0.f, tempSusceptible - getting_bitten * DT);
 
     // Zombies(t+1) = Z(t) + becoming_infecting
     tempZombies = std::max(0.f, tempZombies + becoming_infected * DT);
@@ -275,5 +275,5 @@ void AZombieManager::ZombieModelWithInputs(float tempSusceptible, float tempBitt
     //FString msg =  ;
 
     UE_LOG(LogTemp, Log, TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), tempSusceptible, tempBitten, tempZombies, day2);
-    GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, FString::Printf(TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), tempSusceptible, tempBitten, tempZombies, day2));
+    //GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::White, FString::Printf(TEXT("Susceptible: %f, Bitten: %f, Zombies: %f, On day: %d"), tempSusceptible, tempBitten, tempZombies, day2));
 }
